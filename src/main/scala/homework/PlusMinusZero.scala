@@ -1,4 +1,6 @@
-object Main{
+package homework
+
+object PlusMinusZero{
       def main(args: Array[String]): Unit = {
         println(whatNumber(2))
         println(whatNumber(0))

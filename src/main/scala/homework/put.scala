@@ -1,5 +1,7 @@
+package homework
+
 import scala.math._
-object Main{
+object put{
       def main(args: Array[String]): Unit = {
         println(rastoyanie(1, 2, 2, 1))
         println(rastoyanie(1, 1, -1, -1))

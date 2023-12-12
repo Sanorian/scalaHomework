@@ -1,4 +1,6 @@
-object Main{
+package homework
+
+object multipying{
       def main(args: Array[String]): Unit = {
         multiplying()
       }

@@ -1,3 +1,5 @@
+package homework
+
 object Square{
     def main(args: Array[String]): Unit = {
         println(square(1))

@@ -1,4 +1,6 @@
-object Main{
+package homework
+
+object UntilTo{
       def main(args: Array[String]): Unit = {
         untilTen()
         println("---")

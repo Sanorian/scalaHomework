@@ -1,4 +1,6 @@
-object Main{
+package homework
+
+object CToF{
     def main(args: Array[String]): Unit = {
         println(convert(1))
         println(convert(2))

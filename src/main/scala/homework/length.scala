@@ -1,4 +1,6 @@
-object Main{
+package homework
+
+object length{
       def main(args: Array[String]): Unit = {
         println(length("Hello"))
         println(length("Word"))

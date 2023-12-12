@@ -1,6 +1,8 @@
+package homework
+
 import scala.collection.mutable.ListBuffer
 
-object Main{
+object Fibonacci{
   def main(args: Array[String]): Unit = {
     var list: ListBuffer[Int] = new ListBuffer[Int]()
     list += 0

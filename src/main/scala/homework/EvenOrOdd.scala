@@ -1,4 +1,6 @@
-object Main{
+package homework
+
+object EvenOrOdd{
       def main(args: Array[String]): Unit = {
         println(isEven(2))
         println(isEven(1))

@@ -1,6 +1,8 @@
+package homework
+
 import scala.math._
 
-object Main{
+object spaceOfCircle{
     def main(args: Array[String]): Unit = {
         println(space(1))
         println(space(2))
