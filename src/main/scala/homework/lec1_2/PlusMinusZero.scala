@@ -1,4 +1,4 @@
-package homework
+package homework.lec1_2
 
 object PlusMinusZero{
       def main(args: Array[String]): Unit = {

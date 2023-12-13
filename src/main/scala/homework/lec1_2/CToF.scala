@@ -1,4 +1,4 @@
-package homework
+package homework.lec1_2
 
 object CToF{
     def main(args: Array[String]): Unit = {

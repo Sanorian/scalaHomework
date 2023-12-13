@@ -1,4 +1,4 @@
-package homework
+package homework.lec1_2
 
 import scala.math._
 object put{

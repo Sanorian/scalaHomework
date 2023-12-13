@@ -1,4 +1,4 @@
-package homework
+package homework.lec1_2
 
 object multipying{
       def main(args: Array[String]): Unit = {

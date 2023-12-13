@@ -1,4 +1,4 @@
-package homework
+package homework.lec1_2
 
 object length{
       def main(args: Array[String]): Unit = {
