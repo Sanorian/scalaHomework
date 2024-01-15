@@ -4,12 +4,14 @@ object lec7 {
   def main(args: Array[String]): Unit = {
     println(iterating(List(func1, func2, func3), 1))
     println(returnFunc(List(func1, func2, func3))(1))
-
+    println(curryFunction(func4))
     println(tripleFunction("alpha", 1, 2.0))
     println(part(List(1, 2, 3, 4, 5, 6, 7, 8, 9)))
     println(10.multiplyX10())
     println(10.isEven())
     println(USDtoRUB(10))
+    println(personsList)
+    println(personsList.sorted)
   }
   // Напишите функцию, которая принимает список функций и значение, а затем возвращает список результатов применения каждой функции к этому значению.
   def iterating(list: List[Int => Int], number: Int): List[Int] = {
@@ -22,6 +24,10 @@ object lec7 {
   def func1(x: Int): Int = {x*1}
   def func2(x: Int): Int = {x*2}
   def func3(x: Int): Int = {x*3}
+
+  def func4(a: Int, b: Int): Int = {
+    a+b
+  }
   // Напишите функцию высшего порядка, которая принимает список функций и возвращает новую функцию, которая применяет каждую функцию из списка к результату предыдущей функции. Например, если дан список функций List((x: Int) => x + 1, (x: Int) => x * 2), то результирующая функция должна выполнять следующее: f(x) = (x + 1) * 2
   def returnFunc(list: List[Int=>Int]): Int=>Int = {
     val f = (number: Int) => {
@@ -32,7 +38,12 @@ object lec7 {
     f
   }
   // Напишите функцию, которая принимает другую функцию двух аргументов и возвращает каррированную версию этой функции (т.е. функцию, которая принимает первый аргумент и возвращает функцию, принимающую второй аргумент)
-
+  def curryFunction(func: (Int, Int)=>Int): Int => Int=>Int = {
+    val f = (a: Int)=>{
+      (b: Int)=>{func(a, b)}
+    }
+    f
+  }
   //Напишите функцию, которая принимает три аргумента (String, Int, Double) и объединяет их в одну строку через пробел. Затем преобразуйте эту функцию в каррированную версию, которая принимает первый аргумент и возвращает функцию, принимающую оставшиеся два аргумента
   def tripleFunction(str: String, int: Int, double: Double): String = {
     val f = (str: String)=> {
@@ -75,5 +86,8 @@ object lec7 {
 
   // Создайте case class Person с полями name:String и age:Int. Затем определите implicit val для объекта типа Ordering[Person], который сравнивает объекты Person по возрасту. Создайте List[Person], заполненный какими-либо экземплярами класса Person, напечатайте его на консоль, отсортируйте список и напечатайте отсортированный список на консоль
   case class Person(name: String, age: Int)
-  implicit val
+  var personsList: List[Person] = List(Person("James", 71), Person("Lidia", 23), Person("Milo", 5))
+  object Person {
+    implicit val personOrdering: Ordering[Person] = Ordering.by(_.age)
+  }
 }
